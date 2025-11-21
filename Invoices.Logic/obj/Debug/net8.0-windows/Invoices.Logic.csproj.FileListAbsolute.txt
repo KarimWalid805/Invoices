@@ -18,3 +18,12 @@ Z:\Courses\CS412\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoic
 Z:\Courses\CS412\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoices.Logic.dll
 Z:\Courses\CS412\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\refint\Invoices.Logic.dll
 Z:\Courses\CS412\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoices.Logic.pdb
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoices.Logic.csproj.AssemblyReference.cache
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoices.Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoices.Logic.AssemblyInfoInputs.cache
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoices.Logic.AssemblyInfo.cs
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoices.Logic.csproj.CoreCompileInputs.cache
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoices.Logic.sourcelink.json
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoices.Logic.dll
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\refint\Invoices.Logic.dll
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Logic\obj\Debug\net8.0-windows\Invoices.Logic.pdb

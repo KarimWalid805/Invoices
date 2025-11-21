@@ -1,6 +1,6 @@
-﻿namespace Flix.UX.Views
+﻿namespace Invoices.UX.Views
 {
-    partial class CViewBrowserAppUser
+    partial class CViewBrowserInvoice
     {
         /// <summary>
         /// Required designer variable.

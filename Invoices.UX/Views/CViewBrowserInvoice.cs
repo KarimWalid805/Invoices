@@ -33,7 +33,7 @@ namespace Invoices.UX.Views
 
 
         // --------------------------------------------------------------------------------------
-        public CViewBrowserAppUser(CInvoiceBrowserModel p_oBrowserModel)
+        public CViewBrowserInvoice(CInvoiceBrowserModel p_oBrowserModel)
         {
             InitializeComponent();
             this.browserModel = p_oBrowserModel;
@@ -63,7 +63,7 @@ namespace Invoices.UX.Views
             string sSearchStr = this.txtSearch.Text;
 
             // [C#/LINQ] This is an example of runing a SELECT query a generic list with a specific WHERE clause.
-            var oFound = this.browserModel.Where(x => x.FullName.ToLower().Contains(sSearchStr.ToLower())).ToList();
+            var oFound = this.browserModel.Where(x => x.CustomerName.ToLower().Contains(sSearchStr.ToLower())).ToList();
             if (oFound.Count > 0)
                 this.lstBrowser.SelectedItem = oFound[0];
         }

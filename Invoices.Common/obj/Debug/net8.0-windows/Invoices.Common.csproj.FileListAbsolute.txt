@@ -20,3 +20,15 @@ Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoi
 Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\refint\Invoices.Common.dll
 Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.pdb
 Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\ref\Invoices.Common.dll
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\bin\Debug\net8.0-windows\Invoices.Common.deps.json
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\bin\Debug\net8.0-windows\Invoices.Common.dll
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\bin\Debug\net8.0-windows\Invoices.Common.pdb
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.AssemblyInfoInputs.cache
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.AssemblyInfo.cs
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.csproj.CoreCompileInputs.cache
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.sourcelink.json
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.dll
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\refint\Invoices.Common.dll
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.pdb
+C:\Users\20220344\Source\Repos\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\ref\Invoices.Common.dll

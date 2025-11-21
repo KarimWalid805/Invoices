@@ -8,20 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Flix.Logic.Builders;
-using Flix.Logic.Entities;
-using Flix.Logic.Models;
-using Flix.Logic.Modules;
+using Invoices.Logic.Builders;
+using Invoices.Logic.Entities;
+using Invoices.Logic.Models;
+using Invoices.Logic.Modules;
+using Lib.Common.Attribs;
 using Lib.Logic;
 using Lib.UX;
 using Lib.UX.DataForms;
 using Lib.UX.DataGrid;
 
-namespace Flix.UX.Views
+namespace Invoices.UX.Views
 {
     public partial class CViewEntityInvoice : Form, IEntityViewForm
     {
-        protected DMAppUser module { get; set; } = null!;
+        protected DMInvoices module { get; set; } = null!;
         protected CDetailGridDecorator detailsGrid;
 
         // --------------------------------------------------------------------------------------
@@ -37,60 +38,60 @@ namespace Flix.UX.Views
             this.detailsGrid = new CDetailGridDecorator(this.dgvDetails, oMasterForm.FormContext);
             oMasterForm.DetailGrids.Add(this.detailsGrid);
 
-            this.module = (DMAppUser)oMasterForm.Module;
+            this.module = (DMInvoices)oMasterForm.Module;
         }
         // --------------------------------------------------------------------------------------
         public void WriteMasterToUI()
         {
-            CAppUser oCurrentUser = this.module.MasterEntity;
-            if (oCurrentUser != null)
+            CInvoice oCurrentInvoice = this.module.MasterEntity;
+            if (oCurrentInvoice != null)
             { 
-                this.txtFullName.Text = oCurrentUser.FullName;
+                this.txtFullName.Text = oCurrentInvoice.Customer.ToString();
 
-                this.dtSubscriptionStartDate.Checked = (oCurrentUser.SubscriptionStartDate != null);
-                this.dtSubscriptionStartDate.Value = oCurrentUser.SubscriptionStartDate ?? DateTime.Now;
+             
 
-                this.dtSubscriptionEndDate.Checked = (oCurrentUser.SubscriptionEndDate != null);
-                this.dtSubscriptionEndDate.Value = oCurrentUser.SubscriptionEndDate ?? DateTime.Now;
+          
 
-                this.displaySubscriptionPlanLookup(oCurrentUser);
+
+
+                
             }
         }
         // --------------------------------------------------------------------------------------
         public void ReadMasterFromUI()
         {
-            CAppUser oCurrentUser = this.module.MasterEntity;
-            if (oCurrentUser != null)
+            CInvoice oCurrentInvoice = this.module.MasterEntity;
+            if (oCurrentInvoice != null)
             {
-                oCurrentUser.FullName = this.txtFullName.Text;
+                oCurrentInvoice.Customer = this.txtFullName.Text;
 
-                oCurrentUser.SubscriptionPlanCodeID = -1;
-                if (this.cboSubscriptionPlan.SelectedItem != null)
-                {
-                    CSubscriptionPlan oSelectedPlan = (CSubscriptionPlan)this.cboSubscriptionPlan.SelectedItem;
-                    oCurrentUser.SubscriptionPlanCodeID = oSelectedPlan.CodeId;
-                }
+                //oCurrentInvoice.SubscriptionPlanCodeID = -1;
+                //if (this.cboSubscriptionPlan.SelectedItem != null)
+                //{
+                //    CSubscriptionPlan oSelectedPlan = (CSubscriptionPlan)this.cboSubscriptionPlan.SelectedItem;
+                //    oCurrentUser.SubscriptionPlanCodeID = oSelectedPlan.CodeId;
+                //}
 
-                if (this.dtSubscriptionStartDate.Checked)
-                    oCurrentUser.SubscriptionStartDate = this.dtSubscriptionStartDate.Value.Date;
-                else
-                    oCurrentUser.SubscriptionStartDate = null;
+                //if (this.dtSubscriptionStartDate.Checked)
+                //    oCurrentUser.SubscriptionStartDate = this.dtSubscriptionStartDate.Value.Date;
+                //else
+                //    oCurrentUser.SubscriptionStartDate = null;
 
-                if (this.dtSubscriptionEndDate.Checked)
-                    oCurrentUser.SubscriptionEndDate = this.dtSubscriptionEndDate.Value.Date;
-                else
-                    oCurrentUser.SubscriptionEndDate = null;
+                //if (this.dtSubscriptionEndDate.Checked)
+                //    oCurrentUser.SubscriptionEndDate = this.dtSubscriptionEndDate.Value.Date;
+                //else
+                //    oCurrentUser.SubscriptionEndDate = null;
 
-                oCurrentUser.Change = EntityChangeType.UPDATED;
+                //oCurrentUser.Change = EntityChangeType.UPDATED;
             }
         }
         // --------------------------------------------------------------------------------------
         public void WriteDetailListToUI()
         {
-            // [PATTERNS] Proxy
-            this.detailsGrid.Populate<CAppUserMovie>(this.module.Details);
+            //// [PATTERNS] Proxy
+            //this.detailsGrid.Populate<CAppUserMovie>(this.module.Details);
 
-            addMovieLookupColumn(this.module.Lookups[CDataModuleBuilderAppUser.LOOKUP_MOVIES]);
+            //addMovieLookupColumn(this.module.Lookups[CDataModuleBuilderAppUser.LOOKUP_MOVIES]);
         }
         // --------------------------------------------------------------------------------------
 
@@ -100,23 +101,23 @@ namespace Flix.UX.Views
         // --------------------------------------------------------------------------------------
         // Prepare a combo box that is designed on the form to functiona as lookup for the master (AppUser)
         // and load all lookup entities (CSubscriptionPlans)
-        private void displaySubscriptionPlanLookup(CAppUser p_oCurrentAppUser)
+        private void displaySubscriptionPlanLookup(CInvoice p_oCurrentAppUser)
         {
             // Loads all the options
-            this.cboSubscriptionPlan.ValueMember = "CodeID";
-            this.cboSubscriptionPlan.DisplayMember = "Description";
-            this.cboSubscriptionPlan.Items.Clear();
-            CSubscriptionPlanModel oLookup = (CSubscriptionPlanModel)this.module.Lookups[CDataModuleBuilderAppUser.LOOKUP_SUBSCRIPTION_PLAN];
+            //this.cboSubscriptionPlan.ValueMember = "CodeID";
+            //this.cboSubscriptionPlan.DisplayMember = "Description";
+            //this.cboSubscriptionPlan.Items.Clear();
+            //CSubscriptionPlanModel oLookup = (CSubscriptionPlanModel)this.module.Lookups[CDataModuleBuilderAppUser.LOOKUP_SUBSCRIPTION_PLAN];
 
-            foreach (CSubscriptionPlan oPlan in oLookup)
-                this.cboSubscriptionPlan.Items.Add(oPlan);
+            //foreach (CSubscriptionPlan oPlan in oLookup)
+            //    this.cboSubscriptionPlan.Items.Add(oPlan);
 
-            // Run the lookup relation to get the foreign entity and its fiedls;
-            p_oCurrentAppUser.LookupSubscriptionPlan(oLookup);
+            //// Run the lookup relation to get the foreign entity and its fiedls;
+            //p_oCurrentAppUser.LookupSubscriptionPlan(oLookup);
 
-            this.cboSubscriptionPlan.SelectedItem = p_oCurrentAppUser.SubscriptionPlan;
-            // [C#] The single ? is for a nullable type. On the right side of the null coalescence operator ?? is what to show in case of null
-            this.cboSubscriptionPlan.Text = p_oCurrentAppUser.SubscriptionPlan?.Description ?? "No plan";
+            //this.cboSubscriptionPlan.SelectedItem = p_oCurrentAppUser.SubscriptionPlan;
+            //// [C#] The single ? is for a nullable type. On the right side of the null coalescence operator ?? is what to show in case of null
+            //this.cboSubscriptionPlan.Text = p_oCurrentAppUser.SubscriptionPlan?.Description ?? "No plan";
         }
         // --------------------------------------------------------------------------------------
         // Create a lookup combo box column on the grid for the detail (AppUserMovies)

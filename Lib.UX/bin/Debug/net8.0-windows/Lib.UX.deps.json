@@ -140,7 +140,7 @@
         },
         "runtime": {
           "Lib.dll": {
-            "assemblyVersion": "4.0.0.0",
+            "assemblyVersion": "4.0.0",
             "fileVersion": "4.0.0.0"
           }
         }

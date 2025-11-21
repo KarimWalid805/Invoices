@@ -18,3 +18,12 @@ Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0\Lib.csproj.CoreCompileInp
 Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0\Lib.dll
 Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0\refint\Lib.dll
 Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0\Lib.pdb
+C:\Users\20220344\Source\Repos\Invoices_Project\Lib\obj\Debug\net8.0\Lib.csproj.AssemblyReference.cache
+C:\Users\20220344\Source\Repos\Invoices_Project\Lib\obj\Debug\net8.0\Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20220344\Source\Repos\Invoices_Project\Lib\obj\Debug\net8.0\Lib.AssemblyInfoInputs.cache
+C:\Users\20220344\Source\Repos\Invoices_Project\Lib\obj\Debug\net8.0\Lib.AssemblyInfo.cs
+C:\Users\20220344\Source\Repos\Invoices_Project\Lib\obj\Debug\net8.0\Lib.csproj.CoreCompileInputs.cache
+C:\Users\20220344\Source\Repos\Invoices_Project\Lib\obj\Debug\net8.0\Lib.sourcelink.json
+C:\Users\20220344\Source\Repos\Invoices_Project\Lib\obj\Debug\net8.0\Lib.dll
+C:\Users\20220344\Source\Repos\Invoices_Project\Lib\obj\Debug\net8.0\refint\Lib.dll
+C:\Users\20220344\Source\Repos\Invoices_Project\Lib\obj\Debug\net8.0\Lib.pdb
