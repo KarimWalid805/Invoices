@@ -40,18 +40,18 @@ namespace Invoices.UX.Views
             }
         }
         // ....................................................................
-        private CGenre? _lastSelected = null;
+        private CSupplier? _lastSelected = null;
         public IEntity? SelectedEntity 
         {   get 
             {
-                _lastSelected = lstGenres.SelectedItems[0].Tag as CGenre;
+                _lastSelected = lstGenres.SelectedItems[0].Tag as CSupplier;
                 return _lastSelected as IEntity;
             }
         }
         // ....................................................................
 
         // --------------------------------------------------------------------------------------
-        public CViewBrowserGenre(CGenreBrowserModel p_oBrowserModel)
+        public CViewBrowserGenre(CSupplierBrowserModel p_oBrowserModel)
         {
             InitializeComponent();
 

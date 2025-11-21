@@ -1,6 +1,6 @@
-﻿using Flix.Logic.Builders;
-using Flix.Logic.Modules;
-using Flix.UX.Views;
+﻿using Invoices.Logic.Builders;
+using Invoices.Logic.Modules;
+using Invoices.UX.Views;
 using Lib.Logic.Builders;
 using Lib.UX;
 using Lib.UX.Builders;
@@ -15,7 +15,7 @@ namespace Flix.UX.Builders
 {
     public class CMasterFormBuilderGenre: CMasterFormBuilder
     {
-        protected DMGenre module = null!;
+        protected DMSupplier module = null!;
         protected IBrowserViewForm browserView = null!;
         protected Form entityView = null!;
 
@@ -23,13 +23,13 @@ namespace Flix.UX.Builders
         public override void BuildDataModule()
         {
             CDataModuleDirector oDirector = new CDataModuleDirector();
-            DMGenre oModule = (DMGenre)oDirector.ConstructDM(new CDataModuleBuilderGenre());
+            DMSupplier oModule = (DMSupplier)oDirector.ConstructDM(new CDataModuleBuilderSupplier());
             this.module = oModule;
         }
         // --------------------------------------------------------------------------------
         public override void BuildBrowserView()
         {
-            this.browserView = new CViewBrowserGenre(this.module.Browser);
+            this.browserView = new CViewBrowserSupplier(this.module.Browser);
         }
         // --------------------------------------------------------------------------------
         public override void BuildEntityView()

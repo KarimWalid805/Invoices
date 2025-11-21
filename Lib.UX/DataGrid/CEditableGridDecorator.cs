@@ -18,7 +18,7 @@ namespace Lib.UX.DataGrid
     public class CEditableGridDecorator
     {
         // ....................................................................
-        private DataGridView grid;
+        protected DataGridView grid;
         
         public DataGridView Grid { get { return grid; } }
         // ....................................................................
@@ -30,7 +30,16 @@ namespace Lib.UX.DataGrid
             {
                 IEntity? oResult = null;
                 if (this.grid.CurrentRow != null)
-                    oResult = this.grid.CurrentRow.DataBoundItem as IEntity;
+                { 
+                    try
+                    { 
+                        oResult = this.grid.CurrentRow.DataBoundItem as IEntity;
+                    }
+                    catch(Exception E)
+                    {
+                         Debug.WriteLine(E.Message);
+                    }
+                }
 
                 return oResult;
             }
@@ -104,7 +113,7 @@ namespace Lib.UX.DataGrid
             }
         }
         // --------------------------------------------------------------------------------------
-        private void DoOnDataError(object? sender, DataGridViewDataErrorEventArgs e)
+        protected virtual void DoOnDataError(object? sender, DataGridViewDataErrorEventArgs e)
         {
             MessageBox.Show(e.Exception?.Message);
         }
@@ -116,10 +125,12 @@ namespace Lib.UX.DataGrid
             { 
                 // Create a BindingsList to allow table edit operations
                 _bindingList = new BindingList<T>(p_oEntityList);
+                this.grid.AutoGenerateColumns = true;
                 this.grid.DataSource = null;
                 this.grid.DataSource = _bindingList;
                 this.grid.SetColumnSizes(typeof(T));
                 this.grid.Select();
+                Debug.WriteLine($"Auto-created grid columns:{this.grid.Columns.Count}");
             }
             finally
             { 

@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Flix.Logic.Builders;
-using Flix.Logic.Entities;
-using Flix.Logic.Models;
-using Flix.Logic.Modules;
+using Invoices.Logic.Builders;
+using Invoices.Logic.Entities;
+using Invoices.Logic.Models;
+using Invoices.Logic.Modules;
+
 using Lib.Logic;
 using Lib.UX;
 using Lib.UX.DataForms;
@@ -21,7 +22,7 @@ namespace Flix.UX.Views
 {
     public partial class CViewEntityInvoice : Form, IEntityViewForm
     {
-        protected DMAppUser module { get; set; } = null!;
+        protected DMInvoices module { get; set; } = null!;
         protected CDetailGridDecorator detailsGrid;
 
         // --------------------------------------------------------------------------------------
@@ -37,12 +38,12 @@ namespace Flix.UX.Views
             this.detailsGrid = new CDetailGridDecorator(this.dgvDetails, oMasterForm.FormContext);
             oMasterForm.DetailGrids.Add(this.detailsGrid);
 
-            this.module = (DMAppUser)oMasterForm.Module;
+            this.module = (DMInvoices)oMasterForm.Module;
         }
         // --------------------------------------------------------------------------------------
         public void WriteMasterToUI()
         {
-            CAppUser oCurrentUser = this.module.MasterEntity;
+            CInvoice oCurrentUser = this.module.MasterEntity;
             if (oCurrentUser != null)
             { 
                 this.txtFullName.Text = oCurrentUser.FullName;
@@ -59,12 +60,12 @@ namespace Flix.UX.Views
         // --------------------------------------------------------------------------------------
         public void ReadMasterFromUI()
         {
-            CAppUser oCurrentUser = this.module.MasterEntity;
-            if (oCurrentUser != null)
+            DMInvoices oCurrentInvoice = this.module.MasterEntity;
+            if (oCurrentInvoice != null)
             {
-                oCurrentUser.FullName = this.txtFullName.Text;
+                oCurrentInvoice.FullName = this.txtFullName.Text;
 
-                oCurrentUser.SubscriptionPlanCodeID = -1;
+                oCurrentInvoice.SubscriptionPlanCodeID = -1;
                 if (this.cboSubscriptionPlan.SelectedItem != null)
                 {
                     CSubscriptionPlan oSelectedPlan = (CSubscriptionPlan)this.cboSubscriptionPlan.SelectedItem;
