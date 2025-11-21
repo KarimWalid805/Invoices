@@ -9,7 +9,7 @@ using Lib.Logic.Models;
 
 namespace Invoices.Logic.Models
 {
-    public class CSupplierModel : CMasterModel<CSupplier, CItem >
+    public class CSupplierModel : CTableModel<CSupplier>
     {
         public CSupplierModel() : base("Supplier")
         {

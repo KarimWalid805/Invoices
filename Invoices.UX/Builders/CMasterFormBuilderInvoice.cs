@@ -1,4 +1,5 @@
-﻿using Invoices.Logic.Builders;
+﻿using Invoices.UX.Views;
+using Invoices.Logic.Builders;
 using Invoices.Logic.Modules;
 using Invoices.UX;
 using Invoices.UX.Views;
@@ -27,12 +28,12 @@ namespace Invoices.UX.Builders
         // --------------------------------------------------------------------------------
         public override void BuildBrowserView()
         {
-            this.browserView = new CViewBrowserInvoice(this.module.Browser);
+            this.browserView = new CViewBrowserInvoices(this.module.Browser);
         }
         // --------------------------------------------------------------------------------
         public override void BuildEntityView()
         {
-            this.entityView = new CViewEntityInvoice();
+            this.entityView = new CViewEntityInvoices();
         }
         // --------------------------------------------------------------------------------
         public override void BuildForm()

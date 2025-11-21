@@ -1,7 +1,4 @@
 ﻿using Invoices.Data;
-using Invoices.Data;
-using Invoices.Data.Records;
-using Invoices.Logic.Entities;
 using Invoices.Logic.Models;
 using Invoices.Logic.Modules;
 using Lib.Common.Interfaces;
