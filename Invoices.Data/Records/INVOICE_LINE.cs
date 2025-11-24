@@ -14,7 +14,7 @@ namespace Invoices.Data.Records
 
         public int ID { get; set; }
         public int INVOICE_ID { get; set; }
-        public int ITEM_ID { get; set; }
+        public int? ITEM_ID { get; set; }
         public int QTY { get; set; }
         public int PRICE { get; set; }
         public int LINE_TOTAL { get; set; }

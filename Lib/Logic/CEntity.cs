@@ -15,7 +15,7 @@ namespace Lib.Logic
     //          Additionallywe can use the class provided for T
     //          to instantiate objects of T inside a method (dynamic instantiation)
 
-    public class CEntity<T>: IEntity where T : CDBRecord, new()
+    public class CEntity<T> : IEntity where T : CDBRecord, new()
     {
         // ....................................................................
         private T _record;
@@ -112,6 +112,13 @@ namespace Lib.Logic
 
                 }
             }
+        }
+        // ....................................................................
+        [Browsable(false)]
+        public int ForeignKeyOfMasterValue
+        {
+            get => _record.MasterKeyValue;
+            set => _record.MasterKeyValue = value;
         }
         // ....................................................................
         #endregion

@@ -1,12 +1,14 @@
 ﻿using Invoices.Data.Records;
+using Invoices.Data.Records;
+using Lib.Common.Attribs;
 using Lib.Logic;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Invoices.Data.Records;
-using System.ComponentModel.DataAnnotations;
 
 namespace Invoices.Logic.Entities
 {
@@ -14,6 +16,9 @@ namespace Invoices.Logic.Entities
     {
         [Key]
         public int ID { get => this.Record.ID; set => this.Record.ID = value; }
+
+        [DisplayName("Item Code")]
+        [ColumnWidth(200)]
         public string CODE { get => this.Record.CODE; set => this.Record.CODE = value; }
 
         public int MEASUREMENT_UNIT_CID { get => this.Record.MEASUREMENT_UNIT_CID; set => this.Record.MEASUREMENT_UNIT_CID = value; }

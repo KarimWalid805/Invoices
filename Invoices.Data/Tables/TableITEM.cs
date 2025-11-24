@@ -1,35 +1,62 @@
-﻿using System;
+﻿using Invoices.Data.Records;
+using Lib.Data.Records;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Invoices.Data.Records;
-using Lib.Data.Records;
-using System.Data;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Invoices.Data.Tables
 {
-    public class TableITEM : CDBTable<INVOICE>
+    public class TableITEM : CDBTable<ITEM>
     {
-        public TableITEM(string p_sTableName) : base(p_sTableName)
+        public TableITEM() : base("Item")
         {
         }
-        // --------------------------------------------------------------------------------------
-        public override void LoadTable(IDbTransaction? p_iTransaction)
+        public override void LoadTable(IDbTransaction p_iTransaction)
         {
-            var oRecords = this.DB.Select<INVOICE>("select * from INVOICE", p_iTransaction);
-            this.records.Clear();
+            var oRecords = this.DB.Select<ITEM>("select * from ITEM", p_iTransaction);
+
+            // When a select returns no records a null object might be returned by the method
             if (oRecords != null)
+            {
                 this.records = oRecords;
+
+                foreach (var oRecord in this.records)
+                    Debug.WriteLine(oRecord.ToString());
+            }
         }
         // --------------------------------------------------------------------------------------
+        public override void LoadTable(IDbTransaction? p_iTransaction, int p_nMasterKeyValue)
+        {
+
+            this.records.Clear(); // Empty the existing records
+                                  // We create an object to hold the ID parameter for the select statement
+
+            ITEM? oParams = new ITEM();
+            oParams.ID = p_nMasterKeyValue;
+
+            var oRecords = this.DB.SelectWithParams<ITEM>(
+                    "select * from ITEM where ID = @ID", oParams, p_iTransaction);
+
+            // When a select returns no records a null object might be returned by the method
+            if (oRecords != null)
+            {
+                this.records = oRecords;
+
+                foreach (var oRecord in this.records)
+                    Debug.WriteLine(oRecord.ToString());
+            }
+        }
         public override void SaveTable(IDbTransaction? p_iTransaction)
         {
             if (this.records != null)
             {
         
-                this.DB.SaveChanges<INVOICE>(this.records,
+                this.DB.SaveChanges<ITEM>(this.records,
 
                             // Provide the insert statement that will be used for new records
                             @"

@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -28,96 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblFullName = new Label();
-            txtFullName = new TextBox();
-            lblSubscriptionPlan = new Label();
-            cboSubscriptionPlan = new ComboBox();
-            lblSubscriptionStartDate = new Label();
-            dtSubscriptionStartDate = new DateTimePicker();
-            lblSubscriptionEndDate = new Label();
-            dtSubscriptionEndDate = new DateTimePicker();
             lblUserMovies = new Label();
             dgvDetails = new DataGridView();
+            cboITEM_ORDER = new ComboBox();
+            lblItem_Order = new Label();
+            cboType = new ComboBox();
+            label1 = new Label();
+            cboCustomer = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvDetails).BeginInit();
             SuspendLayout();
-            // 
-            // lblFullName
-            // 
-            lblFullName.AutoSize = true;
-            lblFullName.Location = new Point(48, 15);
-            lblFullName.Name = "lblFullName";
-            lblFullName.Size = new Size(64, 15);
-            lblFullName.TabIndex = 17;
-            lblFullName.Text = "Full Name:";
-            // 
-            // txtFullName
-            // 
-            txtFullName.Location = new Point(118, 12);
-            txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(326, 23);
-            txtFullName.TabIndex = 13;
-            // 
-            // lblSubscriptionPlan
-            // 
-            lblSubscriptionPlan.AutoSize = true;
-            lblSubscriptionPlan.Location = new Point(10, 43);
-            lblSubscriptionPlan.Name = "lblSubscriptionPlan";
-            lblSubscriptionPlan.Size = new Size(102, 15);
-            lblSubscriptionPlan.TabIndex = 18;
-            lblSubscriptionPlan.Text = "Subscription Plan:";
-            // 
-            // cboSubscriptionPlan
-            // 
-            cboSubscriptionPlan.FormattingEnabled = true;
-            cboSubscriptionPlan.Location = new Point(118, 40);
-            cboSubscriptionPlan.Name = "cboSubscriptionPlan";
-            cboSubscriptionPlan.Size = new Size(240, 23);
-            cboSubscriptionPlan.TabIndex = 16;
-            // 
-            // lblSubscriptionStartDate
-            // 
-            lblSubscriptionStartDate.AutoSize = true;
-            lblSubscriptionStartDate.Location = new Point(5, 75);
-            lblSubscriptionStartDate.Name = "lblSubscriptionStartDate";
-            lblSubscriptionStartDate.Size = new Size(107, 15);
-            lblSubscriptionStartDate.TabIndex = 19;
-            lblSubscriptionStartDate.Text = "Subscription From:";
-            // 
-            // dtSubscriptionStartDate
-            // 
-            dtSubscriptionStartDate.Format = DateTimePickerFormat.Short;
-            dtSubscriptionStartDate.Location = new Point(118, 69);
-            dtSubscriptionStartDate.Name = "dtSubscriptionStartDate";
-            dtSubscriptionStartDate.ShowCheckBox = true;
-            dtSubscriptionStartDate.Size = new Size(215, 23);
-            dtSubscriptionStartDate.TabIndex = 14;
-            // 
-            // lblSubscriptionEndDate
-            // 
-            lblSubscriptionEndDate.AutoSize = true;
-            lblSubscriptionEndDate.Location = new Point(354, 75);
-            lblSubscriptionEndDate.Name = "lblSubscriptionEndDate";
-            lblSubscriptionEndDate.Size = new Size(19, 15);
-            lblSubscriptionEndDate.TabIndex = 20;
-            lblSubscriptionEndDate.Text = "To";
-            // 
-            // dtSubscriptionEndDate
-            // 
-            dtSubscriptionEndDate.Format = DateTimePickerFormat.Short;
-            dtSubscriptionEndDate.Location = new Point(379, 69);
-            dtSubscriptionEndDate.Name = "dtSubscriptionEndDate";
-            dtSubscriptionEndDate.ShowCheckBox = true;
-            dtSubscriptionEndDate.Size = new Size(200, 23);
-            dtSubscriptionEndDate.TabIndex = 15;
             // 
             // lblUserMovies
             // 
             lblUserMovies.AutoSize = true;
             lblUserMovies.Location = new Point(118, 118);
             lblUserMovies.Name = "lblUserMovies";
-            lblUserMovies.Size = new Size(140, 15);
+            lblUserMovies.Size = new Size(70, 15);
             lblUserMovies.TabIndex = 22;
-            lblUserMovies.Text = "Movies Watched By User:";
+            lblUserMovies.Text = "Invoice Line";
             // 
             // dgvDetails
             // 
@@ -126,38 +54,72 @@
             dgvDetails.Size = new Size(570, 344);
             dgvDetails.TabIndex = 21;
             // 
-            // CViewEntityAppUser
+            // cboITEM_ORDER
+            // 
+            cboITEM_ORDER.FormattingEnabled = true;
+            cboITEM_ORDER.Location = new Point(118, 40);
+            cboITEM_ORDER.Name = "cboITEM_ORDER";
+            cboITEM_ORDER.Size = new Size(240, 23);
+            cboITEM_ORDER.TabIndex = 16;
+            // 
+            // lblItem_Order
+            // 
+            lblItem_Order.AutoSize = true;
+            lblItem_Order.Location = new Point(45, 43);
+            lblItem_Order.Name = "lblItem_Order";
+            lblItem_Order.Size = new Size(67, 15);
+            lblItem_Order.TabIndex = 18;
+            lblItem_Order.Text = "Item Order:";
+            // 
+            // cboType
+            // 
+            cboType.FormattingEnabled = true;
+            cboType.Location = new Point(118, 69);
+            cboType.Name = "cboType";
+            cboType.Size = new Size(121, 23);
+            cboType.TabIndex = 23;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(77, 72);
+            label1.Name = "label1";
+            label1.Size = new Size(35, 15);
+            label1.TabIndex = 24;
+            label1.Text = "Type:";
+            // 
+            // cboCustomer
+            // 
+            cboCustomer.FormattingEnabled = true;
+            cboCustomer.Location = new Point(118, 12);
+            cboCustomer.Name = "cboCustomer";
+            cboCustomer.Size = new Size(240, 23);
+            cboCustomer.TabIndex = 25;
+            // 
+            // CViewEntityInvoices
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(708, 513);
-            Controls.Add(lblFullName);
-            Controls.Add(txtFullName);
-            Controls.Add(lblSubscriptionPlan);
-            Controls.Add(cboSubscriptionPlan);
-            Controls.Add(lblSubscriptionStartDate);
-            Controls.Add(dtSubscriptionStartDate);
-            Controls.Add(lblSubscriptionEndDate);
-            Controls.Add(dtSubscriptionEndDate);
+            Controls.Add(cboCustomer);
+            Controls.Add(label1);
+            Controls.Add(cboType);
+            Controls.Add(lblItem_Order);
+            Controls.Add(cboITEM_ORDER);
             Controls.Add(lblUserMovies);
             Controls.Add(dgvDetails);
-            Name = "CViewEntityAppUser";
+            Name = "CViewEntityInvoices";
             Text = "CViewEntityAppUser";
             ((System.ComponentModel.ISupportInitialize)dgvDetails).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
-
-        #endregion
-        private Label lblFullName;
-        private TextBox txtFullName;
-        private Label lblSubscriptionPlan;
-        private ComboBox cboSubscriptionPlan;
-        private Label lblSubscriptionStartDate;
-        private DateTimePicker dtSubscriptionStartDate;
-        private Label lblSubscriptionEndDate;
-        private DateTimePicker dtSubscriptionEndDate;
         private Label lblUserMovies;
         private DataGridView dgvDetails;
+        private ComboBox cboITEM_ORDER;
+        private Label lblItem_Order;
+        private ComboBox cboType;
+        private Label label1;
+        private ComboBox cboCustomer;
     }
 }

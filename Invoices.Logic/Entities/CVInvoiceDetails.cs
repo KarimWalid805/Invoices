@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Lib.Logic;
@@ -16,20 +17,14 @@ namespace Invoices.Logic.Entities
         [ColumnWidth(30)]
         public int InvoiceID { get => this.Record.InvoiceID; set => this.Record.InvoiceID = value; }
 
-
-
         [DisplayName("Customer Name")]
         [ReadOnly(true)]
         [ColumnWidth(200)]
         public string CustomerName { get => this.Record.CustomerName ?? ""; set => this.Record.CustomerName = value; }
 
-
-
         [ReadOnly(true)]
         [ColumnWidth(100)]
-        public int ItemCode { get => this.Record.ItemCode; set => this.Record.ItemCode = value; }
-
-
+        public string ItemCode { get => this.Record.ItemCode; set => this.Record.ItemCode = value; }
 
         [ReadOnly(true)]
         [ColumnWidth(50)]
@@ -39,10 +34,11 @@ namespace Invoices.Logic.Entities
         [ColumnWidth(75)]
         public int? PricePerUnit { get => this.Record.PricePerUnit; set => this.Record.PricePerUnit = value; }
 
-
+        public override string ToString()
+        {
+            return $"InvoiceID: {InvoiceID}, Customer: {CustomerName}, Item: {ItemCode}, Quantity: {Quantity}, Price/Unit: ${PricePerUnit}";
+        }
 
         // ........................................................................
-
     }
 }
-

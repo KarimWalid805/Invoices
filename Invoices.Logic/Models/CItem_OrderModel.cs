@@ -11,7 +11,7 @@ namespace Invoices.Logic.Models
 {
     public class CItem_OrderModel : CTableModel<CItem_Order>
     {
-        public CItem_OrderModel() : base("Item")
+        public CItem_OrderModel() : base("ItemOrder")
         {
             this.Table = CDataTableFactory.Instance.Produce(this.TableName)!;
         }

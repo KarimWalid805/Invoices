@@ -1,34 +1,42 @@
-﻿using System;
+﻿using Invoices.Data.Records;
+using Lib.Data.Records;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Invoices.Data.Records;
-using Lib.Data.Records;
-using System.Data;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Invoices.Data.Tables
 {
-    public class TableITEM_ORDER : CDBTable<INVOICE>
+    public class TableITEM_ORDER : CDBTable<ITEM_ORDER>
     {
-        public TableITEM_ORDER(string p_sTableName) : base(p_sTableName)
+        public TableITEM_ORDER() : base("ItemOrder")
         {
         }
         // --------------------------------------------------------------------------------------
-        public override void LoadTable(IDbTransaction? p_iTransaction)
+        public override void LoadTable(IDbTransaction p_iTransaction)
         {
-            var oRecords = this.DB.Select<INVOICE>("select * from ITEM_ORDER", p_iTransaction);
-            this.records.Clear();
+            var oRecords = this.DB.Select<ITEM_ORDER>("select * from ITEM_ORDER");
+
+            // When a select returns no records a null object might be returned by the method
             if (oRecords != null)
+            {
                 this.records = oRecords;
+
+                foreach (var oRecord in this.records)
+                    Debug.WriteLine(oRecord.ToString());
+            }
         }
+        // --------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------
         public override void SaveTable(IDbTransaction? p_iTransaction)
         {
             if (this.records != null)
             {
-                this.DB.SaveChanges<INVOICE>(this.records,
+                this.DB.SaveChanges<ITEM_ORDER>(this.records,
 
                             // Provide the insert statement that will be used for new records
                             @"

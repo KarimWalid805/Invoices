@@ -13,11 +13,17 @@ namespace Invoices.Logic.Modules
     {
         public override void DoOnPerformLookups(object? p_oEntity)
         {
-            if (p_oEntity is CInvoice)
-                ((CInvoice)p_oEntity).LookupCustomer((CCustomerModel)Lookups[CDataModuleBuilderInvoice.LOOKUP_SUBSCRIPTION_PLAN]);
-            else if (p_oEntity is CInvoice_Line)
-                ((CInvoice_Line)p_oEntity).LookupItem((CItemModel)Lookups[CDataModuleBuilderInvoice.LOOKUP_MOVIES]);
+            if (p_oEntity is CInvoice_Line line)
+            {
+                line.LookupItem((CItemModel)Lookups[CDataModuleBuilderInvoice.LOOKUP_ITEM]);
+            }
+            else if (p_oEntity is CInvoice inv)
+            {
+                inv.LookupItemOrder((CItem_OrderModel)Lookups[CDataModuleBuilderInvoice.LOOKUP_ITEM_ORDER]);
+                inv.LookupCustomer((CCustomerModel)Lookups[CDataModuleBuilderInvoice.LOOKUP_CUSTOMER]);
+            }
         }
+
     }
 }
 

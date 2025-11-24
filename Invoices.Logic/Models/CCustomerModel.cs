@@ -11,7 +11,7 @@ namespace Invoices.Logic.Models
 {
     public class CCustomerModel : CTableModel<CCustomer>
     {
-        public CCustomerModel() : base("ApplicationUser")
+        public CCustomerModel() : base("Customer")
         {
             this.Table = CDataTableFactory.Instance.Produce(this.TableName)!;
         }

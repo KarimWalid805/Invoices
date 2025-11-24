@@ -1,7 +1,8 @@
-using Lib.Data;
-using Lib.Data.DB;
+using DataApplication.Data.Tables;
 using Invoices.Common;
 using Invoices.Data.Tables;
+using Lib.Data;
+using Lib.Data.DB;
 
 namespace Invoices.Data
 {
@@ -44,12 +45,15 @@ namespace Invoices.Data
         {
             // [PATTERNS] Factory Method: We register classes for specified identifiers
             // so that the factory method can use them for creating table object.
+            
             this["InvoiceLine"] = typeof(TableINVOICE_LINE);
+            this["Invoice_Line"] = typeof(TableINVOICE_LINE);   // ADDED: match model's "Invoice_Line"
             this["Invoice"] = typeof(TableINVOICE);
             this["ItemOrder"] = typeof(TableITEM_ORDER);
             this["Item"] = typeof(TableITEM);
             this["Supplier"] = typeof(TableSUPPLIER);
             this["Customer"] = typeof(TableCUSTOMER);
+            this["ViewInvoices"] = typeof(TableVW_INVOICE_DETAIL);
         }
         // ----------------------------------------------------------------------------------
         // [PATTERNS] Factory Method
@@ -70,3 +74,5 @@ namespace Invoices.Data
         // ----------------------------------------------------------------------------------
     }
 }
+
+

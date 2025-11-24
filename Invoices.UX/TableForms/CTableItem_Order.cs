@@ -1,25 +1,17 @@
-﻿using Flix.Logic.Entities;
-using Flix.Logic.Models;
+﻿using Invoices.Logic.Entities;
+using Invoices.Logic.Models;
 using Lib.UX;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Flix.UX.TableForms
+namespace Invoices.UX.TableForms
 {
-    public partial class CTableFormMovie : CFormTemplateTable
+    public partial class CTableItem_Order : CFormTemplateTable
     {
-        public CMovieModel Model = new CMovieModel();
+
+        // [v3]
+        public CItem_OrderModel Model = new CItem_OrderModel();
 
         // --------------------------------------------------------------------------------------
-        public CTableFormMovie()
+        public CTableItem_Order()
         {
             InitializeComponent();
         }
@@ -40,7 +32,7 @@ namespace Flix.UX.TableForms
         protected override void DisplayModelEntitiesOnGrid()
         {
             // [v2]
-            editableGridRecords.Populate<CMovie>(Model);
+            editableGridRecords.Populate<CItem_Order>(Model);
         }
         // --------------------------------------------------------------------------------------
         protected override bool SaveModule()

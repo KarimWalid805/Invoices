@@ -16,24 +16,16 @@ namespace Invoices.Logic.Entities
     public class CInvoice_Line : CEntity<INVOICE_LINE>
     {
         [Key]
+        [ColumnWidth(45)]
         public int Id { get => this.Record.ID; set => this.Record.ID = value; }
         [ForeignKey("Master")]   // [MASTER-DETAIL] This declares the master-detail relationship
         [ColumnWidth(30)]
-        public int? INVOICE_ID
+
+       
+    
+        public int INVOICE_ID
         {
-            get
-            {
-                if (this.Record.INVOICE_ID == 0)
-                    return -1;
-                else
-                    return this.Record.INVOICE_ID;
-            }
-            set
-            {
-                if (value != null)
-                    this.Record.INVOICE_ID = value ?? -1;
-                this.InvokePropertyChanged(nameof(INVOICE_ID));
-            }
+            get => this.Record.INVOICE_ID; set => this.Record.INVOICE_ID = value;
         }
         public void LookupItem(List<CItem> p_oItems)
         {
@@ -46,7 +38,17 @@ namespace Invoices.Logic.Entities
 
         [Browsable(false)]
         public CItem? Item { get; set; } = null;
-        public int ITEM_ID { get => this.Record.ITEM_ID; set => this.Record.ITEM_ID = value; }
+
+        [ColumnWidth(200)]
+        [DisplayName("Item Name")]
+    
+        public string ItemName
+        {
+            get => this.Item?.CODE ?? "";
+            set { /* optionally ignore, but must exist */ }
+        }
+        // ........................................................................
+        public int? ITEM_ID { get => this.Record.ITEM_ID; set => this.Record.ITEM_ID = value; }
 
 
         public int QTY { get => this.Record.QTY; set => this.Record.QTY = value; }

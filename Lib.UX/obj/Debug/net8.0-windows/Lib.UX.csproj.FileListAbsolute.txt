@@ -23,6 +23,7 @@ Z:\Courses\CS412\Invoices_Project\Lib.UX\obj\Debug\net8.0-windows\Lib.UX.Generat
 Z:\Courses\CS412\Invoices_Project\Lib.UX\obj\Debug\net8.0-windows\Lib.UX.AssemblyInfoInputs.cache
 Z:\Courses\CS412\Invoices_Project\Lib.UX\obj\Debug\net8.0-windows\Lib.UX.AssemblyInfo.cs
 Z:\Courses\CS412\Invoices_Project\Lib.UX\obj\Debug\net8.0-windows\Lib.UX.csproj.CoreCompileInputs.cache
+Z:\Courses\CS412\Invoices_Project\Lib.UX\obj\Debug\net8.0-windows\Lib.UX.sourcelink.json
 Z:\Courses\CS412\Invoices_Project\Lib.UX\obj\Debug\net8.0-windows\Lib.UX.csproj.Up2Date
 Z:\Courses\CS412\Invoices_Project\Lib.UX\obj\Debug\net8.0-windows\Lib.UX.dll
 Z:\Courses\CS412\Invoices_Project\Lib.UX\obj\Debug\net8.0-windows\refint\Lib.UX.dll

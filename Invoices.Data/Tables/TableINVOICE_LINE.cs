@@ -1,60 +1,77 @@
-﻿
-using Invoices.Data.Records;
-using Lib.Data.Records;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-
+using Invoices.Data.Records;
+using Lib.Data.Records;
 
 namespace Invoices.Data.Tables
 {
-    public class TableINVOICE_LINE : CDBTable<INVOICE>
+    public class TableINVOICE_LINE : CDBTable<INVOICE_LINE>
     {
-        public TableINVOICE_LINE(string p_sTableName) : base(p_sTableName)
+        public int MasterID { get; set; }
+
+        public TableINVOICE_LINE() : base("INVOICE_LINE") { }
+
+        public override void LoadTable(IDbTransaction? p_iTransaction, int p_nMasterKeyValue)
         {
+            this.MasterID = p_nMasterKeyValue;
+            this.LoadTable(p_iTransaction);
         }
-        // --------------------------------------------------------------------------------------
+
         public override void LoadTable(IDbTransaction? p_iTransaction)
         {
-            var oRecords = this.DB.Select<INVOICE>("select * from INVOICE_LINE", p_iTransaction);
             this.records.Clear();
+
+            INVOICE_LINE? oParams = new INVOICE_LINE { INVOICE_ID = this.MasterID };
+            var oRecords = this.DB.SelectWithParams<INVOICE_LINE>(
+                "SELECT * FROM INVOICE_LINE WHERE INVOICE_ID = @INVOICE_ID", oParams, p_iTransaction);
+
             if (oRecords != null)
+            {
                 this.records = oRecords;
+                foreach (var r in this.records)
+                    Debug.WriteLine(r.ToString());
+            }
         }
-        // --------------------------------------------------------------------------------------
+
         public override void SaveTable(IDbTransaction? p_iTransaction)
         {
-            if (this.records != null)
-            {
-                this.DB.SaveChanges<INVOICE>(this.records,
-                    
-                            // Provide the insert statement that will be used for new records
-                            @"
-                                                    insert into invoice
-                        (ID,CUSTOMER_ID, INVOICE_ID, ITEM_ID, QTY, PRICE, LINE_TOTAL )
-                        values 
-                        (@ID,@CUSTOMER_ID,@INVOICE_ID, @ITEM_ID, @QTY, @PRICE, @LINE_TOTAL)",
+            if (this.records == null) return;
 
-                            // Provide the update statement that will be used for updated records
-                            @"
-                             update INVOICE set 
-                            CUSTOMER_ID = @CUSTOMER_ID,
-                            INVOICE_ID = @CUSINVOICE_IDTOMER_ID
-                            ITEM_ID = @ITEM_ID,
-                            QTY = @QTY,
-                            PRICE = @PRICE,
-                            LINE_TOTAL = @LINE_TOTAL
-                            where 
-                            ID = @ID
-                                ",
+            // Ensure all lines point to the correct invoice
+            foreach (var rec in this.records)
+                rec.INVOICE_ID = this.MasterID;
 
-                            // Provide the delete statement that will be used for deleted records
-                            "delete from INVOICE where ID = @ID",
+            this.DB.SaveChanges<INVOICE_LINE>(
+                this.records,
 
-                            p_iTransaction
-                        );
+                // Insert
+                @"
+INSERT INTO INVOICE_LINE
+(INVOICE_ID, ITEM_ID, QTY, PRICE, LINE_TOTAL)
+VALUES
+(@INVOICE_ID, @ITEM_ID, @QTY, @PRICE, @LINE_TOTAL)
+",
 
-                this.LoadTable(p_iTransaction);
-            }
+                // Update
+                @"
+UPDATE INVOICE_LINE SET
+    INVOICE_ID = @INVOICE_ID,
+    ITEM_ID    = @ITEM_ID,
+    QTY        = @QTY,
+    PRICE      = @PRICE,
+    LINE_TOTAL = @LINE_TOTAL
+WHERE ID = @ID
+",
+
+                // Delete
+                "DELETE FROM INVOICE_LINE WHERE ID = @ID",
+
+                p_iTransaction
+            );
+
+            this.LoadTable(p_iTransaction);
         }
     }
 }

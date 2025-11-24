@@ -11,7 +11,7 @@ namespace Invoices.Logic.Models
 {
     public class CItemModel :CTableModel<CItem>
     {
-        public CItemModel() : base("Items")
+        public CItemModel() : base("Item")
         {
             this.Table = CDataTableFactory.Instance.Produce(this.TableName)!;
         }

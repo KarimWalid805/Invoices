@@ -44,8 +44,10 @@ namespace Invoices.Logic.Builders
         }
         // -----------------------------------------------------------------------------------------------
 
-        public const int LOOKUP_SUBSCRIPTION_PLAN = 0;
-        public const int LOOKUP_MOVIES = 1;
+        public const int LOOKUP_ITEM_ORDER = 0;
+        public const int LOOKUP_ITEM = 1;
+        public const int LOOKUP_CUSTOMER = 2;
+
 
 
         public void BuildLookupModels()
@@ -57,8 +59,12 @@ namespace Invoices.Logic.Builders
             CItemModel oLookup2 = new CItemModel();
             oLookup2.Table = CDataTableFactory.Instance.Produce(oLookup2.TableName)!;
 
+            CCustomerModel oLookup3 = new CCustomerModel();
+            oLookup2.Table = CDataTableFactory.Instance.Produce(oLookup2.TableName)!;
+
             product.Lookups.Add(oLookup1);
             product.Lookups.Add(oLookup2);
+            product.Lookups.Add(oLookup3);
         }
         // -----------------------------------------------------------------------------------------------
         #endregion

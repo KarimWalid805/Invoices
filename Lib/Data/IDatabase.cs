@@ -23,5 +23,6 @@ namespace Lib.Data
         public int Insert<T>(string p_sInsertSQL, T p_oRecord, IDbTransaction p_iTransaction);
         public void SaveChanges<T>(List<T> p_oTable, string p_sInsertSQL, string p_sUpdateSQL, string p_sDeleteSQL) where T : CDBRecord;
         public void SaveChanges<T>(List<T> p_oTable, string p_sInsertSQL, string p_sUpdateSQL, string p_sDeleteSQL, IDbTransaction? p_iTransaction) where T : CDBRecord;
+        
     }
 }

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Invoices.UX\Invoices.UX.csproj" />
     <ProjectReference Include="C:\Users\karim\Source\Repos\Invoices_Project\Invoices.UX\Invoices.UX.csproj" />
   </ItemGroup>
 

@@ -11,7 +11,7 @@ namespace Invoices.Data.Records
     {
         public int InvoiceID { get; set; }
         public string CustomerName { get; set; }
-        public int ItemCode { get; set; }
+        public string ItemCode { get; set; }
         public int? Quantity { get; set; }
         public int? PricePerUnit { get; set; }
     }

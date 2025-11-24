@@ -73,10 +73,14 @@ namespace Lib.UX.DataForms.MasterForm
             bool bResult = false;
             if (form.HasSelectedInBrowser())
             {
+               
                 if (form.ModuleLoadEntity())
                 {
+                    
                     this.PerformAction("OpenEntity");
+                   
                     form.WriteMasterToUI();
+                    
                     form.WriteDetailListToUI();
                     bResult = true;
                 }

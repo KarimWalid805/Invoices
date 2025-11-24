@@ -16,6 +16,7 @@ Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoi
 Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.AssemblyInfoInputs.cache
 Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.AssemblyInfo.cs
 Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.csproj.CoreCompileInputs.cache
+Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.sourcelink.json
 Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.dll
 Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\refint\Invoices.Common.dll
 Z:\Courses\CS412\Invoices_Project\Invoices.Common\obj\Debug\net8.0-windows\Invoices.Common.pdb

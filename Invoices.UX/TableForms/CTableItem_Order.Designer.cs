@@ -1,6 +1,6 @@
-﻿namespace Flix.UX.TableForms
+﻿namespace Invoices.UX.TableForms
 {
-    partial class CTableFormSubscriptionPlan
+    partial class CTableItem_Order
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             SuspendLayout();
             // 
-            // CTableFormSubscriptionPlan
+            // CTableItem_Order
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "CTableFormSubscriptionPlan";
-            Text = "Subscription Plans";
+            Name = "CTableItem_Order";
+            Text = "Item Orders";
             ResumeLayout(false);
         }
 

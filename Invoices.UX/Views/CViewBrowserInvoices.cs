@@ -43,7 +43,7 @@ namespace Invoices.UX.Views
         {
             this.parent = (CFormTemplateMaster)p_oForm;
             // Sets the title on the master-detail form
-            this.parent.Text = "Movie Genres";
+            this.parent.Text = "Invoices";
         }
         // --------------------------------------------------------------------------------------
         public void Display(Control p_oContainer)
@@ -64,7 +64,7 @@ namespace Invoices.UX.Views
 
             // Fix for CS7036: Ensure that the string is converted to lowercase using the correct method.
             var oFound = this.browserModel
-                .Where(x => x.ItemCode.ToString().ToLowerInvariant().Contains(sSearchStr.ToLowerInvariant()))
+                .Where(x => x.CustomerName.ToString().ToLowerInvariant().Contains(sSearchStr.ToLowerInvariant()))
                 .ToList();
 
             if (oFound.Count > 0)

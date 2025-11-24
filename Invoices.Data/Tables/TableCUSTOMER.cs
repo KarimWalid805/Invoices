@@ -6,15 +6,15 @@ using System.Data;
 
 namespace Invoices.Data.Tables
 {
-    public class TableCUSTOMER : CDBTable<INVOICE>
+    public class TableCUSTOMER : CDBTable<CUSTOMER>
     {
-        public TableCUSTOMER(string p_sTableName) : base(p_sTableName)
+        public TableCUSTOMER() : base("Customer")
         {
         }
         // --------------------------------------------------------------------------------------
         public override void LoadTable(IDbTransaction? p_iTransaction)
         {
-            var oRecords = this.DB.Select<INVOICE>("select * from CUSTOMER", p_iTransaction);
+            var oRecords = this.DB.Select<CUSTOMER>("select * from CUSTOMER", p_iTransaction);
             this.records.Clear();
             if (oRecords != null)
                 this.records = oRecords;
@@ -25,19 +25,19 @@ namespace Invoices.Data.Tables
             if (this.records != null)
             {
              
-                this.DB.SaveChanges<INVOICE>(this.records,
+                this.DB.SaveChanges<CUSTOMER>(this.records,
 
                             // Provide the insert statement that will be used for new records
                             @"
                                                     insert into CUSTOMER
-                        (ID,CUSTOMER_CATEGORY_CID, CUST_NAME)
+                        (CUSTOMER_CATEGORY_CID, CUST_NAME)
                         values 
-                        (@ID,@CUSTOMER_CATEGORY_CID, @CUST_NAME)",
+                        (@CUSTOMER_CATEGORY_CID, @CUST_NAME)",
 
                             // Provide the update statement that will be used for updated records
                             @"
                              update CUSTOMER set 
-                            CUSTOMER_CATEGORY_CID = @CUSTOMER_CATEGORY_CID
+                            CUSTOMER_CATEGORY_CID = @CUSTOMER_CATEGORY_CID,
                              CUST_NAME = @CUST_NAME
                             where 
                             ID = @ID

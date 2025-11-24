@@ -72,7 +72,7 @@
             // 
             tablesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mnuSubscriptionPlans, mnuMovies });
             tablesToolStripMenuItem.Name = "tablesToolStripMenuItem";
-            tablesToolStripMenuItem.Size = new Size(51, 20);
+            tablesToolStripMenuItem.Size = new Size(52, 20);
             tablesToolStripMenuItem.Text = "Tables";
             // 
             // mnuSubscriptionPlans
@@ -98,7 +98,7 @@
             IsMdiContainer = true;
             MainMenuStrip = mnuMain;
             Name = "CFormMain";
-            Text = "Flix Streaming Service Manager Application";
+            Text = "BLASLGFMQAWETgf";
             WindowState = FormWindowState.Maximized;
             mnuMain.ResumeLayout(false);
             mnuMain.PerformLayout();

@@ -1,4 +1,4 @@
-﻿using Flix.Data.Records;
+﻿using Invoices.Data.Records;
 using Invoices.Data.Records;
 using Lib.Data.Records;
 using System;
@@ -14,7 +14,7 @@ namespace DataApplication.Data.Tables
 {
     public class TableVW_INVOICE_DETAIL : CDBTable<VINVOICEDETAILS>
     {
-        public TableVW_INVOICE_DETAIL() : base("ApplicationUsersView")
+        public TableVW_INVOICE_DETAIL() : base("InvoicesView")
         {
         }
         // --------------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ namespace DataApplication.Data.Tables
         {
             this.records.Clear(); // Empty the existing records
 
-            var oRecords = this.DB.Select<VINVOICEDETAILS>("select * from TableVW_INVOICE_DETAIL", p_iTransaction);
+            var oRecords = this.DB.Select<VINVOICEDETAILS>("select * from vw_InvoiceDetails", p_iTransaction);
 
             // When a select returns no records a null object might be returned by the method
             if (oRecords != null)
@@ -36,3 +36,4 @@ namespace DataApplication.Data.Tables
         // --------------------------------------------------------------------------------------
     }
 }
+

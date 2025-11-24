@@ -19,7 +19,7 @@ namespace Invoices.Logic.Models
         public Dictionary<string, object> Criteria { get { return _criteria; } }
 
 
-        public CInvoiceBrowserModel() : base("ViewApplicationUsers")
+        public CInvoiceBrowserModel() : base("ViewInvoices")
         {
             this.Table = CDataTableFactory.Instance.Produce(this.TableName)!;
         }
