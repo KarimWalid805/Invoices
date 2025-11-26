@@ -10,7 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Invoices.Common\Invoices.Common.csproj" />
     <ProjectReference Include="..\Invoices.Data\Invoices.Data.csproj" />
-    <ProjectReference Include="..\Lib\Lib.csproj" />
   </ItemGroup>
 
 </Project>

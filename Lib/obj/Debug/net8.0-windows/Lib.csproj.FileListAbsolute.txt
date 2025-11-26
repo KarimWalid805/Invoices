@@ -1,0 +1,16 @@
+Z:\Courses\CS412\Invoices_Project\Lib\bin\Debug\net8.0-windows\Lib.deps.json
+Z:\Courses\CS412\Invoices_Project\Lib\bin\Debug\net8.0-windows\Lib.dll
+Z:\Courses\CS412\Invoices_Project\Lib\bin\Debug\net8.0-windows\Lib.pdb
+Z:\Courses\CS412\Invoices_Project\Lib\bin\Debug\net8.0-windows\Invoices.Common.dll
+Z:\Courses\CS412\Invoices_Project\Lib\bin\Debug\net8.0-windows\Invoices.Common.pdb
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\Lib.csproj.AssemblyReference.cache
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\Lib.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\Lib.AssemblyInfoInputs.cache
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\Lib.AssemblyInfo.cs
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\Lib.csproj.CoreCompileInputs.cache
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\Lib.sourcelink.json
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\Lib.csproj.Up2Date
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\Lib.dll
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\refint\Lib.dll
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\Lib.pdb
+Z:\Courses\CS412\Invoices_Project\Lib\obj\Debug\net8.0-windows\ref\Lib.dll

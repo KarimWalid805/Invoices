@@ -33,7 +33,11 @@ namespace Invoices.UX.Views
 
 
         // --------------------------------------------------------------------------------------
+
+      
+
         public CViewBrowserInvoices(CInvoiceBrowserModel p_oBrowserModel)
+
         {
             InitializeComponent();
             this.browserModel = p_oBrowserModel;
@@ -62,10 +66,11 @@ namespace Invoices.UX.Views
         {
             string sSearchStr = this.txtSearch.Text;
 
-            // Fix for CS7036: Ensure that the string is converted to lowercase using the correct method.
-            var oFound = this.browserModel
-                .Where(x => x.CustomerName.ToString().ToLowerInvariant().Contains(sSearchStr.ToLowerInvariant()))
-                .ToList();
+
+
+
+            // [C#/LINQ] This is an example of runing a SELECT query a generic list with a specific WHERE clause.
+            var oFound = this.browserModel.Where(x => x.CustomerName.ToLower().Contains(sSearchStr.ToLower())).ToList();
 
             if (oFound.Count > 0)
                 this.lstBrowser.SelectedItem = oFound[0];

@@ -28,7 +28,11 @@ namespace Invoices.UX.Builders
         // --------------------------------------------------------------------------------
         public override void BuildBrowserView()
         {
+
             this.browserView = new CViewBrowserInvoices(this.module.Browser);
+
+           
+
         }
         // --------------------------------------------------------------------------------
         public override void BuildEntityView()

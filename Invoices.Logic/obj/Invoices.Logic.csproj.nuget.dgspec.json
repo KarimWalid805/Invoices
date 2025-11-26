@@ -180,9 +180,6 @@
               },
               "Z:\\Courses\\CS412\\Invoices_Project\\Invoices.Data\\Invoices.Data.csproj": {
                 "projectPath": "Z:\\Courses\\CS412\\Invoices_Project\\Invoices.Data\\Invoices.Data.csproj"
-              },
-              "Z:\\Courses\\CS412\\Invoices_Project\\Lib\\Lib.csproj": {
-                "projectPath": "Z:\\Courses\\CS412\\Invoices_Project\\Lib\\Lib.csproj"
               }
             }
           }
@@ -226,7 +223,7 @@
       }
     },
     "Z:\\Courses\\CS412\\Invoices_Project\\Lib\\Lib.csproj": {
-      "version": "4.0.0",
+      "version": "4.1.0",
       "restore": {
         "projectUniqueName": "Z:\\Courses\\CS412\\Invoices_Project\\Lib\\Lib.csproj",
         "projectName": "Lib",
@@ -243,16 +240,20 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net8.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {}
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "Z:\\Courses\\CS412\\Invoices_Project\\Invoices.Common\\Invoices.Common.csproj": {
+                "projectPath": "Z:\\Courses\\CS412\\Invoices_Project\\Invoices.Common\\Invoices.Common.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -268,8 +269,8 @@
         "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "dependencies": {
             "Dapper": {
               "target": "Package",

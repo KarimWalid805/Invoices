@@ -13,7 +13,6 @@
     <ProjectReference Include="..\Invoices.Data\Invoices.Data.csproj" />
     <ProjectReference Include="..\Invoices.Logic\Invoices.Logic.csproj" />
     <ProjectReference Include="..\Lib.UX\Lib.UX.csproj" />
-    <ProjectReference Include="..\Lib\Lib.csproj" />
   </ItemGroup>
 
 </Project>

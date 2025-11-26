@@ -13,8 +13,8 @@ using System.Threading.Tasks;
 namespace Lib.Logic.Modules
 {
     // [C#] [ADVANCED GENERICS] We can forward a generic class type from a placeholder to another generic class placeholder (e.g. in CBaseModel<T> will copy EB to T)
-    public class CDataModule<B, M, D, EB, EM, ED> : IDataModule
-        where B : CBaseModel<EB>
+    public class CDataModule<B, M, D, EB, EM, ED> : IDataModule 
+        where B: CBaseModel<EB>
             where EB : IEntity, new()
         where M : CMasterModel<EM, ED>
             where EM : IEntity, new()

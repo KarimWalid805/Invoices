@@ -24,6 +24,7 @@ namespace Invoices.UX.Views
     public partial class CViewEntityInvoices : Form, IEntityViewForm
     {
         protected DMInvoices module { get; set; } = null!;
+        protected CInvoice_LineModel detailModel { get; set; } = null!;
         protected CDetailGridDecorator detailsGrid;
 
         // --------------------------------------------------------------------------------------

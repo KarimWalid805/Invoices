@@ -9,7 +9,7 @@
       "Invoices.Data/1.0.0": {
         "dependencies": {
           "Invoices.Common": "1.0.0",
-          "Lib": "4.0.0"
+          "Lib": "4.1.0"
         },
         "runtime": {
           "Invoices.Data.dll": {}
@@ -141,16 +141,17 @@
           }
         }
       },
-      "Lib/4.0.0": {
+      "Lib/4.1.0": {
         "dependencies": {
           "Dapper": "2.1.35",
+          "Invoices.Common": "1.0.0",
           "System.Data.SQLite.Core": "1.0.119",
           "System.Data.SqlClient": "4.8.6"
         },
         "runtime": {
           "Lib.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.0.0"
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
           }
         }
       }
@@ -251,7 +252,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Lib/4.0.0": {
+    "Lib/4.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

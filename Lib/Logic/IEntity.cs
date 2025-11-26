@@ -14,7 +14,6 @@ namespace Lib.Logic
         public EntityChangeType Change { get; set; }
         public event PropertyChangedEventHandler OnPropertyChange;
         public int PrimaryKeyValue { get; }
-
         public int ForeignKeyOfMasterValue { get; set; }
         public Object Rec {get; set; }
     }

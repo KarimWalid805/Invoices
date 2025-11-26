@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Lib.Logic
     //          Additionallywe can use the class provided for T
     //          to instantiate objects of T inside a method (dynamic instantiation)
 
-    public class CEntity<T> : IEntity where T : CDBRecord, new()
+    public class CEntity<T>: IEntity where T : CDBRecord, new()
     {
         // ....................................................................
         private T _record;
@@ -24,7 +25,15 @@ namespace Lib.Logic
         public T Record { get { return _record; } set { _record = value; } }
         // ....................................................................
         [Browsable(false)]
-        public int PrimaryKeyValue { get { return GetPrimaryKeyValue() ?? -1; } }
+        public int PrimaryKeyValue { get => GetPrimaryKeyValue() ?? -1; }
+
+        [Browsable(false)]
+        public int ForeignKeyOfMasterValue 
+        {   get => GetForeignKeyOfMasterValue() ?? -1; 
+            set => SetForeignKeyOfMasterValue(value);
+        }
+
+
         // ....................................................................
         // [C#] We declare an event member. This gives the ability to a client code to hook an event handler
         public event PropertyChangedEventHandler OnPropertyChange;
@@ -60,6 +69,46 @@ namespace Lib.Logic
                 }
             }
             return nResult;
+        }
+        // --------------------------------------------------------------------------------------
+        // [C#/.NET] [ADVANCED]: This in an example of reflection. 
+        protected int? GetForeignKeyOfMasterValue()
+        {
+            int? nResult = null;
+
+            string sResult = string.Empty;
+            Type tObjectType = GetType();
+            foreach (var oProperty in tObjectType.GetProperties())
+            {
+                var oKeyAttrib = oProperty.GetCustomAttribute<ForeignKeyAttribute>();
+                if (oKeyAttrib != null)
+                {
+                    if (oKeyAttrib.Name == "Master")
+                    { 
+                        string sPrimaryKeyFieldName = oProperty.Name;
+                        nResult = (int?)oProperty.GetValue(this);
+                        break;
+                    }
+                }
+            }
+            return nResult;
+        }
+        // --------------------------------------------------------------------------------------
+        protected void SetForeignKeyOfMasterValue(int p_nValue)
+        {
+            Type tObjectType = GetType();
+            foreach (var oProperty in tObjectType.GetProperties())
+            {
+                var oKeyAttrib = oProperty.GetCustomAttribute<ForeignKeyAttribute>();
+                if (oKeyAttrib != null)
+                {
+                    if ((oKeyAttrib.Name == "Master") || (oKeyAttrib.Name == "MasterTable"))
+                    {
+                        oProperty.SetValue(this, p_nValue); 
+                        break;
+                    }
+                }
+            }
         }
         // --------------------------------------------------------------------------------------
 
@@ -112,13 +161,6 @@ namespace Lib.Logic
 
                 }
             }
-        }
-        // ....................................................................
-        [Browsable(false)]
-        public int ForeignKeyOfMasterValue
-        {
-            get => _record.MasterKeyValue;
-            set => _record.MasterKeyValue = value;
         }
         // ....................................................................
         #endregion

@@ -5,8 +5,6 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invoices.UX", "Invoices.UX.csproj", "{743529BB-F3A4-4E84-A2A9-623BA6D459C9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib", "..\Lib\Lib.csproj", "{3C547DB0-0037-41BF-ACA5-93074FB60B94}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invoices.Data", "..\Invoices.Data\Invoices.Data.csproj", "{56B7D77F-7A5F-4F90-8BB9-41E616151C2E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invoices.Logic", "..\Invoices.Logic\Invoices.Logic.csproj", "{69B3F9E8-9758-49E6-B212-31EA56915CCC}"
@@ -16,6 +14,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.UX", "..\Lib.UX\Lib.UX.csproj", "{06697C08-564F-4FD6-8882-F7E1BE5FB1CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsApp", "C:\Users\karim\source\repos\Invoices_Project\WindowsApp\WindowsApp.csproj", "{317B5FBB-F3C7-3C53-E771-5E6119450265}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib", "..\Lib\Lib.csproj", "{A6BAA4DE-6E36-B6DC-3A0A-69557A08B920}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,6 @@ Global
 		{743529BB-F3A4-4E84-A2A9-623BA6D459C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{743529BB-F3A4-4E84-A2A9-623BA6D459C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{743529BB-F3A4-4E84-A2A9-623BA6D459C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C547DB0-0037-41BF-ACA5-93074FB60B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C547DB0-0037-41BF-ACA5-93074FB60B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C547DB0-0037-41BF-ACA5-93074FB60B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C547DB0-0037-41BF-ACA5-93074FB60B94}.Release|Any CPU.Build.0 = Release|Any CPU
 		{56B7D77F-7A5F-4F90-8BB9-41E616151C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{56B7D77F-7A5F-4F90-8BB9-41E616151C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56B7D77F-7A5F-4F90-8BB9-41E616151C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{317B5FBB-F3C7-3C53-E771-5E6119450265}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{317B5FBB-F3C7-3C53-E771-5E6119450265}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{317B5FBB-F3C7-3C53-E771-5E6119450265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6BAA4DE-6E36-B6DC-3A0A-69557A08B920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6BAA4DE-6E36-B6DC-3A0A-69557A08B920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6BAA4DE-6E36-B6DC-3A0A-69557A08B920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6BAA4DE-6E36-B6DC-3A0A-69557A08B920}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

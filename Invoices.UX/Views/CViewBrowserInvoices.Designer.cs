@@ -1,6 +1,9 @@
 ﻿namespace Invoices.UX.Views
 {
+
     partial class CViewBrowserInvoices
+
+
     {
         /// <summary>
         /// Required designer variable.
