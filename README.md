@@ -28,6 +28,24 @@ Invoices is a Windows Forms desktop application for browsing and maintaining inv
 | `Lib/` | Shared database access and persistence framework |
 | `Lib.UX/` | Shared WinForms data-form and grid helpers |
 
+## Software and design patterns
+
+The application uses these patterns in its form construction, data access, and editing workflows:
+
+| Pattern | How it is used |
+| --- | --- |
+| **Builder and Director** | `CDataModuleDirector` builds the browser, master, detail, and lookup models in sequence using `CDataModuleBuilderInvoice`. `CMasterFormDirector` and `CMasterFormBuilderInvoice` assemble the invoice module and its views into a form. |
+| **Factory** | `CDataTableFactory` maps table identifiers such as `Invoice` and `Customer` to table classes and creates the selected type with `Produce`. |
+| **Singleton** | `CDataTableFactory.Instance` and `CSettings.Instance` provide shared instances of the table factory and application settings. The factory uses `Lazy<T>` for its singleton instance. |
+| **Lazy initialization** | The SQL Server connection is created when `CDataTableFactory.DB` is first accessed. The shared SQL database classes and detail-grid lookup column also defer setup until needed. |
+| **State** | Master and table form contexts hold an `IFormState` and delegate actions to state objects, such as browser-loaded, opened-entity, editing, and changed states. The states control form behavior and transitions. |
+| **Decorator** | `CBrowserGridDecorator`, `CEditableGridDecorator`, and `CDetailGridDecorator` wrap WinForms grids to add browser, editing, and detail-grid behavior. |
+| **Template Method** | Shared data-module and table-form classes define reusable load, save, and form lifecycle steps, with overridable hooks for specialized behavior. |
+| **Visitor** | `CVisitorToModel` and `CVisitorToTable` transfer data between database records and logic entities. Model load/save operations accept these visitors; view display also uses the `DisplayView` control extension. |
+| **Proxy** | `CFormTemplateMaster` exposes methods that delegate module operations and view updates to their underlying objects, keeping form state handling separate from those components. |
+
+The project also follows a **layered architecture**: `Invoices.Data` handles persistence mappings, `Invoices.Logic` owns invoice models and business coordination, and `Invoices.UX`/`WindowsApp` provide the desktop interface. The invoice form uses a **master-detail** structure, with an invoice as the master record and its invoice lines as details.
+
 ## Requirements
 
 - Windows
